@@ -1,2 +1,2 @@
-import TwankyBot from './build/TwankyBot';
+var TwankyBot = require("./build/TwankyBot");
 TwankyBot.run();

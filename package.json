@@ -1,16 +1,21 @@
 {
     "name": "twankybot",
     "version": "0.0.1",
-    "main": "./build/index.js",
+    "main": "index.js",
     "scripts": {
         "tsc": "tsc",
         "clean": "rimraf build",
-        "build": "yarn run clean && yarn run tsc --"
+        "build": "yarn run clean && yarn run tsc -- && copyfiles -u 2 ./src/auth/auth.json build/auth",
+        "run": "node index.js"
     },
-    "dependencies": {},
+    "dependencies": {
+        "discord.io": "^2.5.3",
+        "winston": "^3.2.1"
+    },
     "devDependencies": {
         "@types/node": "^11.9.4",
         "concurrently": "^4.1.0",
+        "copyfiles": "^2.1.0",
         "rimraf": "^2.6.3",
         "tslint": "^5.12.1",
         "typescript": "^3.3.3"
